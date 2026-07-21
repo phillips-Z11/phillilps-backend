@@ -23,12 +23,12 @@ def render_email_template(template_name: str, context: dict) -> str:
     return template.render(**context)
 
 
-def send_html_email(subject: str, html_body: str, to_email: str) -> None:
+def send_html_email(subject: str, html_body: str) -> None:
     """Send an HTML email with a plain text fallback."""
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"] = "kickoffteam2@gmail.com"
-    msg["To"] = to_email
+    msg["From"] = settings.FROM_EMAIL
+    msg["To"] = settings.INBOX_EMAIL
 
     # Plain text fallback
     plain_text = "New contact form submission received. Please view this email in an HTML-compatible client."
@@ -39,8 +39,8 @@ def send_html_email(subject: str, html_body: str, to_email: str) -> None:
     msg.attach(part2)
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login("kickoffteam2@gmail.com", settings.APP_PASSWORD)
-        server.send_message(msg, from_addr="kickoffteam2@gmail.com", to_addrs=to_email)
+        server.login(settings.FROM_EMAIL, settings.APP_PASSWORD)
+        server.send_message(msg, from_addr=settings.FROM_EMAIL, to_addrs=settings.INBOX_EMAIL)
 
 
 @router.post("/")
@@ -62,7 +62,6 @@ def send_mail(form_data: ContactFormRequest):
         send_html_email(
             subject="New Contact Form Submission - Phillips Family Enterprises",
             html_body=html_content,
-            to_email="robcampbell26042604@gmail.com",
         )
     except smtplib.SMTPException as e:
         raise HTTPException(status_code=502, detail=f"Failed to send email: {e}")

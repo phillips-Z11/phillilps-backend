@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
 
     APP_PASSWORD: str = ""
+    INBOX_EMAIL: str = ""
+    FROM_EMAIL: str = ""
     CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
 
     @computed_field
