@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Form Submission</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
+        <tr>
+            <td style="padding: 40px 20px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background-color: #1a1a2e; padding: 30px 40px; text-align: center;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600; letter-spacing: 1px;">
+                                Phillips Family Enterprises
+                            </h1>
+                            <p style="margin: 10px 0 0 0; color: #a0a0a0; font-size: 14px;">
+                                New Contact Form Submission
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding: 40px;">
+                            <p style="margin: 0 0 25px 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                                You have received a new inquiry from your website contact form:
+                            </p>
+
+                            <!-- Name Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="background-color: #f3e5f5; border-left: 4px solid #9C27B0; padding: 15px 20px; border-radius: 0 4px 4px 0;">
+                                        <p style="margin: 0 0 5px 0; color: #6A1B9A; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                            Name
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px;">
+                                            {{ firstName }} {{ lastName }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Address Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="background-color: #e8f4fd; border-left: 4px solid #2196F3; padding: 15px 20px; border-radius: 0 4px 4px 0;">
+                                        <p style="margin: 0 0 5px 0; color: #1565C0; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                            Address
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px; line-height: 1.5;">
+                                            {{ address }}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Phone Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="background-color: #e8f5e9; border-left: 4px solid #4CAF50; padding: 15px 20px; border-radius: 0 4px 4px 0;">
+                                        <p style="margin: 0 0 5px 0; color: #2E7D32; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                            Phone
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px;">
+                                            <a href="tel:{{ phone }}" style="color: #333333; text-decoration: none;">{{ phone }}</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Email Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="background-color: #fff3e0; border-left: 4px solid #FF9800; padding: 15px 20px; border-radius: 0 4px 4px 0;">
+                                        <p style="margin: 0 0 5px 0; color: #E65100; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                            Email
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px;">
+                                            <a href="mailto:{{ email }}" style="color: #1565C0; text-decoration: none;">{{ email }}</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #f8f9fa; padding: 20px 40px; border-top: 1px solid #e0e0e0;">
+                            <p style="margin: 0; color: #888888; font-size: 12px; text-align: center;">
+                                Submitted on {{ timestamp }}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
